@@ -10,7 +10,7 @@ typedef struct _node{
 }node;
 bool cmp(node p,node q){
     if(p.a==q.a) return (p.b>q.b);
-    else return (p.a<p.b);
+    else return (p.a<q.a);
 }
 node d[10000];
 int main()
@@ -25,7 +25,7 @@ int main()
         for(int i=0;i<n;i++){
             s=d[i].a;
             e=d[i].b;
-            while(i<n-1&&d[i+1].a<e){
+            while(i-1<n&&d[i+1].a<e){
                 if(d[i+1].b<=e) i++;
                 else {
                     e=d[i+1].b;
