@@ -16,7 +16,7 @@ board=soup.find_all('a',class_='board')
     print(title.text) 
     print('https://www.ptt.cc/'+contents.get('href'))
     print('\n')'''
-
+#爬取第一層網頁名稱連結
 for i,item in enumerate(board):
         print(i,item.find('div',class_='board-title').text)
         content='連結:https://www.ptt.cc{}'.format(item.get('href'))
@@ -25,6 +25,7 @@ for i,item in enumerate(board):
         res1=re.get(content,headers=header,cookies=cookies)
         sp=bs(res1.text,'html.parser')
         inner_titles=sp.find_all('div',class_='title')
+#爬取第一層連結內網址的各個文章標題
         for i,inti in enumerate(inner_titles):
             if inti.find('a'):
                 print('\t',i+1,inti.a.text)
