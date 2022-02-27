@@ -3,9 +3,11 @@
 using namespace std;  
 int main()  
 {  
-    cout << "35的8進位制:" << std::oct << 35<< endl;  
-    cout << "35的10進位制" << std::dec << 35 << endl;  
-    cout << "35的16進位制:" << std::hex << 35 << endl;  
-    cout << "35的2進位制: " << bitset<8>(35) << endl;      //<8>：表示保留8位輸出
+    int n;
+    cin>>n;
+    cout << "n的8進位制:" << oct<<n << endl;  
+    cout << "n的10進位制：" << dec << n << endl;  
+    cout << "n的16進位制:" << hex << n << endl;  
+    cout << "n的2進位制: " << bitset<8>(n) << endl;      //<8>：表示保留8位輸出
     return 0;  
 }  
