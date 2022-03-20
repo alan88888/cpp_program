@@ -27,11 +27,13 @@ int gmax(int l,int r){
 int gcmax(int l,int m,int r){
     int suml,maxl,sumr,maxr;
     suml=0;
-    for(int i=m,i>=l,i--){
+    maxl=a[m];
+    for(int i=m;i>=l;i--){
         suml+=a[i];
         if(maxl<suml) maxl=suml;
     }
     sumr=0;
+    maxr=a[m+1];
     for(int i=m+1;i<=r;i++){
         sumr+=a[i];
         if(maxr<sumr) maxr=sumr;
